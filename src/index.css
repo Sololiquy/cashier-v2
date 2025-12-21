@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+body {
+   @apply bg-gray-200;
+}
+
+.allCenter {
+   @apply items-center justify-center;
+}
+
+.allFull {
+   @apply w-full h-full;
+}
+
+.allScreen {
+   @apply w-screen h-screen;
+}
