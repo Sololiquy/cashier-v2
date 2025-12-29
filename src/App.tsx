@@ -4,7 +4,7 @@ import Layout from "./pages/_layout";
 import Login from "./pages/login";
 import Menu from "./pages/menu";
 import Receipt from "./pages/receipt";
-import Setting from "./pages/setting";
+import Setting from "./pages/setting/setting";
 
 export default function App() {
    return (

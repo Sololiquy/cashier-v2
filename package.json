@@ -11,7 +11,9 @@
     "preview": "cross-env NODE_ENV=production node server"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.89.0",
     "@tailwindcss/vite": "^4.1.18",
+    "axios": "^1.13.2",
     "compression": "^1.8.1",
     "express": "^5.2.1",
     "react": "^19.2.1",
@@ -19,7 +21,8 @@
     "react-icons": "^5.5.0",
     "react-router": "^7.11.0",
     "sirv": "^3.0.2",
-    "tailwindcss": "^4.1.18"
+    "tailwindcss": "^4.1.18",
+    "zustand": "^5.0.9"
   },
   "devDependencies": {
     "@types/express": "^5.0.6",

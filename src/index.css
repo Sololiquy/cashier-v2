@@ -1,7 +1,23 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:is(.dark *));
+
+:root {
+   --color1: rgb(229, 231, 235);
+   --color1_inv: rgb(46, 51, 60);
+   --color2: rgb(213, 213, 213);
+   --color3: rgb(143, 150, 160);
+}
+
+.dark {
+   --color1: rgb(75, 85, 99);
+   --color1_inv: rgb(229, 231, 235);
+   --color2: rgb(49, 55, 63);
+   --color3: rgb(0, 0, 0);
+}
+
 body {
-   @apply bg-gray-200;
+   @apply bg-(--color1) text-(--color1_inv);
 }
 
 .allCenter {
@@ -14,4 +30,16 @@ body {
 
 .allScreen {
    @apply w-screen h-screen;
+}
+
+.availabilityNotification {
+   @apply top-1.5 right-1.5 pb-1 rounded-full absolute flex justify-center items-center;
+}
+
+.quantityProductButton {
+   @apply size-8 pb-1 flex justify-center items-center text-2xl font-bold text-white;
+}
+
+.buttonFilterProduct {
+   @apply w-60 px-4 py-2 rounded-full text-3xl flex flex-row bg-(--color2) justify-center items-center;
 }
