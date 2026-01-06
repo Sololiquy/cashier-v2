@@ -1,0 +1,9 @@
+{
+   "menu": {
+      "food": "FOOD",
+      "drink": "DRINK",
+      "dessert": "DESSERT"
+   },
+   "loading": "Loading...",
+   "empty": "Empty"
+}

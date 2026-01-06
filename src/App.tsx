@@ -10,11 +10,12 @@ export default function App() {
    return (
       <Routes>
          <Route path="/" element={<Layout />}>
-            <Route path="/" element={<Navigate to="/menu" />} />
-            <Route path="/menu" element={<Menu />} />
-            <Route path="/receipt" element={<Receipt />} />
-            <Route path="/setting" element={<Setting />} />
+            <Route index element={<Menu />} />
+            <Route path="menu" element={<Menu />} />
+            <Route path="receipt" element={<Receipt />} />
+            <Route path="setting" element={<Setting />} />
          </Route>
+
          <Route path="/login" element={<Login />} />
       </Routes>
    );

@@ -1,0 +1,9 @@
+{
+   "menu": {
+      "food": "MAKANAN",
+      "drink": "MINUMAN",
+      "dessert": "DESSERT"
+   },
+   "loading": "Memuat...",
+   "empty": "Habis"
+}

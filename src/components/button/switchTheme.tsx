@@ -30,8 +30,8 @@ export default function ThemeButton() {
    };
 
    return (
-      <button onClick={toggleTheme} className={`px-3 py-2 rounded-lg bg-gray-200 dark:bg-gray-800 text-black dark:text-white transition`}>
-         {isDark ? "🌙 Dark" : "☀️ Light"}
+      <button onClick={toggleTheme} className={`px-3 py-2 rounded-lg bg-gray-200 dark:bg-gray-800 text-black text-2xl dark:text-white transition`}>
+         {isDark ? "🌙" : "☀️"}
       </button>
    );
 }

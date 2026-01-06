@@ -1,5 +1,6 @@
 import React from "react";
 import { useCheckoutStore } from "@/store/useCheckout";
+import { useLanguageStore } from "@/store/useLanguage";
 
 interface Parameter {
    data: {
@@ -12,9 +13,10 @@ interface Parameter {
 }
 
 export default function Card_product({ data }: Parameter) {
-   const add = useCheckoutStore((s) => s.add);
-   const remove = useCheckoutStore((s) => s.remove);
-   const quantity = useCheckoutStore((s) => s.getQuantity(data.product_id));
+   const text = useLanguageStore((state) => state.text);
+   const add = useCheckoutStore((state) => state.add);
+   const remove = useCheckoutStore((state) => state.remove);
+   const quantity = useCheckoutStore((state) => state.getQuantity(data.product_id));
    const imageURL = `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/product/${data.url_image}`;
 
    return (
@@ -22,7 +24,7 @@ export default function Card_product({ data }: Parameter) {
          <div className={`aspect-square rounded-xl overflow-hidden text-2xl relative`}>
             <img className={`w-full h-full object-cover`} src={imageURL} alt="" />
             {!data.availability ? (
-               <div className={`availabilityNotification h-10 px-4 text-white bg-gray-800`}>Habis</div>
+               <div className={`availabilityNotification h-10 px-4 text-white bg-gray-800`}>{text.empty}</div>
             ) : quantity > 0 ? (
                <div className={`availabilityNotification size-10 font-bold text-white bg-red-500`}>{quantity}</div>
             ) : null}

@@ -4,20 +4,20 @@
 
 :root {
    --color1: rgb(229, 231, 235);
-   --color1_inv: rgb(46, 51, 60);
    --color2: rgb(213, 213, 213);
-   --color3: rgb(143, 150, 160);
+   --color3: rgb(174, 182, 193);
+   --color4: rgb(46, 51, 60);
 }
 
 .dark {
    --color1: rgb(75, 85, 99);
-   --color1_inv: rgb(229, 231, 235);
    --color2: rgb(49, 55, 63);
    --color3: rgb(0, 0, 0);
+   --color4: rgb(229, 231, 235);
 }
 
 body {
-   @apply bg-(--color1) text-(--color1_inv);
+   @apply bg-(--color1) text-(--color4);
 }
 
 .allCenter {
@@ -41,5 +41,18 @@ body {
 }
 
 .buttonFilterProduct {
-   @apply w-60 px-4 py-2 rounded-full text-3xl flex flex-row bg-(--color2) justify-center items-center;
+   @apply w-60 px-4 py-2 rounded-full text-2xl tracking-wider flex flex-row bg-(--color2) justify-center items-center;
+}
+
+.checkout_tabImage {
+   @apply size-32 md:size-16;
+}
+.checkout_tabInfo {
+   @apply min-w-44 grow flex flex-col justify-center;
+}
+.checkout_tabQty {
+   @apply w-16 md:w-10 flex items-center;
+}
+.checkout_tabTotal {
+   @apply w-36 md:w-24 flex items-center;
 }
