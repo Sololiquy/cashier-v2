@@ -2,6 +2,8 @@ import { useState } from "react";
 
 import { Timestamp } from "@/hooks/useTimestamp";
 
+import ProductCard from "components/card/card_product-receipt";
+
 interface parameter {
    data: {
       total_price: number;
@@ -24,6 +26,14 @@ export default function Card({ data }: parameter) {
                {date} {time}
             </div>
          </div>
+
+         {isExpanded && (
+            <div className={`gap-1 flex flex-col`}>
+               {data.receipt_data.map((item: any) => (
+                  <ProductCard key={item.product_id} data={item} />
+               ))}
+            </div>
+         )}
 
          <hr />
 

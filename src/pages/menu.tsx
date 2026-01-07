@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useProductStore } from "@/store/useProduct";
 import { useLanguageStore } from "@/store/useLanguage";
 import { useCheckoutStore } from "@/store/useCheckout";
@@ -11,12 +11,17 @@ import Card from "components/card/card_product";
 import CheckoutCard from "components/card/card_product_checkout";
 
 export default function Menu() {
+   const { fetchProduct } = useProductStore();
    const text = useLanguageStore((state) => state.text);
    const products = useProductStore((state) => state.products);
    const loading = useProductStore((state) => state.loading);
    const checkout = useCheckoutStore((state) => state.items);
    const totalPrice = useCheckoutStore((state) => state.totalPrice());
    const [category, setCategory] = useState<string>("");
+
+   useEffect(() => {
+      fetchProduct();
+   }, []);
 
    const filteredProducts = category ? products.filter((p) => p.category.includes(category)) : products;
 

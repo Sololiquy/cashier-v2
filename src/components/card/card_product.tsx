@@ -12,7 +12,7 @@ interface Parameter {
    };
 }
 
-export default function Card_product({ data }: Parameter) {
+export default function Card({ data }: Parameter) {
    const text = useLanguageStore((state) => state.text);
    const add = useCheckoutStore((state) => state.add);
    const remove = useCheckoutStore((state) => state.remove);
